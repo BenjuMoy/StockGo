@@ -1,0 +1,21 @@
+{{define "product_table"}}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+
+            <th>Qty</th>
+
+            <th>Price</th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{range .}} {{template "product_row" .}} {{end}}
+    </tbody>
+</table>
+
+{{end}}

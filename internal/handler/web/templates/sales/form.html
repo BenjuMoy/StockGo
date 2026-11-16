@@ -1,0 +1,26 @@
+{{define "sell_product_form"}}
+
+<div class="modal">
+    <h2>Sell {{.Name}}</h2>
+
+    <form
+        hx-post="/sales"
+        hx-target="#sales"
+        hx-swap="outerHTML"
+        hx-on::after-request="
+        if(event.detail.successful)
+            document.getElementById('modal').innerHTML=''"
+    >
+        <input type="hidden" name="stock_id" value="{{.ID}}" />
+
+        <label>
+            Price
+
+            <input type="number" name="price" value="{{.Cost}}" />
+        </label>
+
+        <button type="submit">Sell</button>
+    </form>
+</div>
+
+{{end}}

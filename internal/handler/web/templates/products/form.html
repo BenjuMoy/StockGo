@@ -1,0 +1,33 @@
+{{define "add_product_form"}}
+
+<h2>Add Product</h2>
+
+<form
+    hx-post="/products"
+    hx-target="#products"
+    hx-swap="outerHTML"
+    hx-on::after-request="
+        if(event.detail.successful) this.reset()"
+>
+    <label>
+        Name
+
+        <input name="name" required />
+    </label>
+
+    <label>
+        Quantity
+
+        <input type="number" min="0" required name="quantity" />
+    </label>
+
+    <label>
+        Price
+
+        <input type="number" min="0" required name="price" />
+    </label>
+
+    <button type="submit">Save</button>
+</form>
+
+{{end}}

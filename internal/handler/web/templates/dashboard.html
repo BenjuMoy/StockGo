@@ -1,0 +1,25 @@
+{{define "dashboard"}}
+
+<div class="stats">
+    <div class="stat-card">
+        <div class="stat-title">Products</div>
+        <div class="stat-value">{{.Products}}</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-title">Items</div>
+        <div class="stat-value">{{.Items}}</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-title">Revenue</div>
+        <div class="stat-value">${{.Revenue}}</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-title">Inventory</div>
+        <div class="stat-value">${{.Inventory}}</div>
+    </div>
+</div>
+
+{{end}}

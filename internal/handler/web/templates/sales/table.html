@@ -1,0 +1,23 @@
+{{define "sales_table"}}
+
+<h2>Sales</h2>
+
+<table>
+    <tr>
+        <th>Product</th>
+
+        <th>Price</th>
+    </tr>
+
+    {{range .}}
+
+    <tr>
+        <td>{{.StockID}}</td>
+
+        <td>${{.SoldPrice}}</td>
+    </tr>
+
+    {{end}}
+</table>
+
+{{end}}

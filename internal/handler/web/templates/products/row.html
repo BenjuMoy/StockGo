@@ -1,0 +1,36 @@
+{{define "product_row"}}
+
+<tr id="product-{{.ID}}">
+    <td>{{.Name}}</td>
+
+    <td>{{.Quantity}}</td>
+
+    <td>${{.Cost}}</td>
+
+    <td>
+        <button
+            hx-get="/products/{{.ID}}/edit"
+            hx-target="#product-{{.ID}}"
+            hx-swap="outerHTML"
+        >
+            Edit
+        </button>
+
+        <button
+            hx-delete="/products/{{.ID}}"
+            hx-target="#product-{{.ID}}"
+            hx-swap="delete"
+        >
+            Delete
+        </button>
+        <button
+            hx-get="/products/{{.ID}}/sell"
+            hx-target="#modal"
+            hx-swap="innerHTML"
+        >
+            Sell
+        </button>
+    </td>
+</tr>
+
+{{end}}

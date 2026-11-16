@@ -1,0 +1,11 @@
+{{define "sale_result"}}
+
+<div id="sales">{{template "sales_table" .Sales}}</div>
+
+<div id="products" hx-swap-oob="outerHTML">
+    {{template "product_table" .Products}}
+</div>
+
+<div id="modal" hx-swap-oob="innerHTML"></div>
+
+{{end}}

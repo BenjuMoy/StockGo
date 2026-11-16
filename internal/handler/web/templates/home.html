@@ -1,0 +1,15 @@
+{{define "content"}}
+
+<h1>📦 Stock Manager</h1>
+
+<div>{{template "add_product_form"}}</div>
+
+<hr />
+
+<div id="products">{{template "product_table" .Products}}</div>
+
+<hr />
+
+<div id="sales">{{template "sales_table" .Sales}}</div>
+
+{{end}}

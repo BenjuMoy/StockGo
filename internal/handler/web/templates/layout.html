@@ -1,0 +1,24 @@
+{{define "layout"}}
+
+<!doctype html>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<html>
+    <head>
+        <title>Stock Manager</title>
+
+        <script src="https://unpkg.com/htmx.org"></script>
+
+        <link rel="stylesheet" href="../static/style.css" />
+    </head>
+
+    <body>
+        <div class="container">{{template "content" .}}</div>
+        <div id="modal"></div>
+    </body>
+</html>
+
+{{end}}

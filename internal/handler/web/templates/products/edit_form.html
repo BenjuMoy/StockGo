@@ -1,0 +1,34 @@
+{{define "edit_product_form"}}
+
+<tr id="product-{{.ID}}">
+    <td>
+        <input name="name" value="{{.Name}}" />
+    </td>
+
+    <td>{{.Quantity}}</td>
+
+    <td>
+        <input type="number" name="price" value="{{.Cost}}" />
+    </td>
+
+    <td>
+        <button
+            hx-put="/products/{{.ID}}"
+            hx-include="closest tr"
+            hx-target="#product-{{.ID}}"
+            hx-swap="outerHTML"
+        >
+            Save
+        </button>
+
+        <button
+            hx-get="/products/{{.ID}}/row"
+            hx-target="#product-{{.ID}}"
+            hx-swap="outerHTML"
+        >
+            Cancel
+        </button>
+    </td>
+</tr>
+
+{{end}}
